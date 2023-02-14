@@ -1,0 +1,29 @@
+.parentContainer {
+    position:relative;
+    height: 100vh;
+}
+.box{
+    position:absolute;
+    background-color: rgb(176, 120, 228);
+    color: aqua;
+}
+
+.boxOne{
+    top:0;
+    left:0;
+}
+
+.boxTwo{
+    top:0;
+    right:0;
+}
+
+.boxThree{
+    bottom:0;
+    left:0;
+}
+
+.boxFour{
+    bottom:0;
+    right:0;
+}
