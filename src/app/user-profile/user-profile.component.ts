@@ -7,7 +7,7 @@ import { User } from "./../shared/models/User";
   styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent {
-  user2 = new User('toto', 'titi', 25, 'this is my quote', 'https://randomuser.me/api/portraits/lego/2.jpg');
+  user2 = new User('toto', 'titi', 2, 'this is my quote', 'https://randomuser.me/api/portraits/lego/2.jpg');
   user1 : User = {
     lastName : 'toto',
     firstName : 'Cedric',

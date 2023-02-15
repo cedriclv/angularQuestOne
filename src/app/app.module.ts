@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BlocksComponent } from './blocks/blocks.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { AdminExoComponent } from './admin-exo/admin-exo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BlocksComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    AdminExoComponent
   ],
   imports: [
     BrowserModule,
