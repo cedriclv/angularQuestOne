@@ -1,0 +1,22 @@
+<div class="card container justify-content-center">
+  <div class="row justify-content-center p-2">
+    <img
+      class="imgCard"
+      [src] = "user.photo"
+      src="./../assets/angular-binding-challeng.png"
+      alt=""
+      srcset=""
+    />
+  </div>
+  <div class="row justify-content-center p-2">
+    <span>Nom: {{ user.lastName}} </span>
+    <span>Prenom: {{ user.firstName}} </span>
+    <span id="ageTag" >Age: {{ user.age}} </span>
+    <span>{{ user.quote}}</span>
+    <input type="text" [(ngModel)]="user.quote">
+  </div>
+
+  <div class="row justify-content-center p-2">
+    <button class="btn btn-secondary" (click)="alterImage()" type="submit">Afficher / Masquer mon age</button>
+  </div>
+</div>
