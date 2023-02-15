@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { User } from "./../shared/models/User";
 
 @Component({
   selector: 'app-user-profile',
@@ -6,13 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent {
-  user = {
-    lastName : 'Le Valegant',
+  user2 = new User('toto', 'titi', 25, 'this is my quote', 'https://randomuser.me/api/portraits/lego/2.jpg');
+  user1 : User = {
+    lastName : 'toto',
     firstName : 'Cedric',
     age : 44,
-    quote : 'I need a break',
+    quote : 'the best quote !',
     photo : 'https://randomuser.me/api/portraits/lego/2.jpg'
-  };
+  }
 
   alterImage(){    
     let ageTag = document.getElementById("ageTag");
