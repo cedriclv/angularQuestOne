@@ -1,0 +1,14 @@
+.imgCard{
+    height: 100%;
+    width: auto;
+}
+
+.row{
+    border: 1px black solid;
+}
+
+.card{
+    margin: 100px;
+    width: 350px;
+    height: 400px;
+}
