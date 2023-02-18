@@ -1,1 +1,11 @@
-<p>sign-up works!</p>
+<form>
+    <fieldset>
+        <label for="firstName">first name
+        </label>
+        <input [(ngModel)]="user.firstName" id="firstName"type="text">
+    </fieldset>
+
+    <button type="reset">Reset</button>
+    <button type="submit">Submit</button>
+</form>
+{{ user.firstName}}
