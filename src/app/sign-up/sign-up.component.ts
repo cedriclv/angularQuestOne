@@ -9,6 +9,7 @@ import { User } from "./../shared/models/User";
 export class SignUpComponent {
 
   user = new User();
+  isOKForm: boolean = true;
 
   onSubmit(){
     console.log(this.user);
