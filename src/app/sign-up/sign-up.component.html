@@ -97,6 +97,7 @@
         id="email"
         type="emails"
         required
+        email
       />
     </fieldset>
     <div
@@ -104,7 +105,7 @@
       *ngIf="email.invalid && userForm.submitted"
     >
       <div *ngIf="email.errors?.['required']">Email is required</div>
-      <div *ngIf="!email.errors?.['email'] && !email.errors?.['required'] ">
+      <div *ngIf="!email.errors?.['pattern'] && (!email.errors?.['required'])">
         Email provided is not valid
       </div>
     </div>
