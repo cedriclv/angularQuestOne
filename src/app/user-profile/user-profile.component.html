@@ -2,18 +2,18 @@
   <div class="row justify-content-center p-2">
     <img
       class="imgCard"
-      [src] = "user2.photo"
+      [src] = ""
       src="./../assets/angular-binding-challeng.png"
       alt=""
       srcset=""
     />
   </div>
   <div class="row justify-content-center p-2">
-    <span>Nom: {{ user2.lastName}} </span>
-    <span>Prenom: {{ user2.firstName}} </span>
-    <span id="ageTag" >Age: {{ user2.age}} </span>
-    <span>{{ user2.quote}}</span>
-    <input type="text" [(ngModel)]="user2.quote">
+    <span *ngIf="user1.lastName">Nom: {{ user1.lastName}} </span>
+    <span>Prenom: {{ user1.firstName}} </span>
+    <span *ngIf="user1.age !== undefined" id="ageTag" >Age: {{ user1.age}} </span>
+    <span *ngIf="user1.quote !== undefined">{{ user1.quote}}</span>
+    <input type="text" [(ngModel)]="user1.quote">
   </div>
 
   <div class="row justify-content-center p-2">

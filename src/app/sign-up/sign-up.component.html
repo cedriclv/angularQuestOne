@@ -1,11 +1,51 @@
-<form>
-    <fieldset>
-        <label for="firstName">first name
-        </label>
-        <input [(ngModel)]="user.firstName" id="firstName"type="text">
-    </fieldset>
-
-    <button type="reset">Reset</button>
-    <button type="submit">Submit</button>
-</form>
-{{ user.firstName}}
+<div class="d-flex flex-column justify content-center p-2 m-2">
+    <h1 class="display-4">SUBSCRIBE</h1>
+    <form #userForm="ngForm" (ngSubmit)="onSubmit()" class="border border-border-light w-75 m-2 rounded" >
+        <!-- <div>
+            <span>User Form valid ? {{userForm.valid}}</span>
+            <br>
+            <span>User Form submitted ? {{userForm.submitted}}</span>
+        </div> -->
+        <fieldset class="form-group w-50 m-2 p-2">
+            <label for="firstName">first name
+            </label>
+            <input class="form-control" [(ngModel)]="user.firstName" #firstName="ngModel" name="notUsed" id="firstName"type="text" required minlength="3" maxlength="15">
+        </fieldset>
+        <div class="alert alert-warning w-50 m-2 p-2" *ngIf="firstName.invalid && userForm.submitted">
+            <div *ngIf="firstName.errors?.['required']">First Name is required</div>
+            <div *ngIf="firstName.errors?.['maxlength']">The first name must not exceed 15 characters</div>
+            <div *ngIf="firstName.errors?.['minlength']">3 characters are required for the first name</div>
+        </div>
+        <fieldset class="form-group w-50 m-2 p-2">
+            <label for="lastName">last name
+            </label>
+            <input class="form-control" [(ngModel)]="user.lastName" #lastName="ngModel" name="notUsed" id="lastName"type="text" required minlength="3" maxlength="15">
+        </fieldset>
+        <div class="alert alert-warning w-50 m-2 p-2" *ngIf="lastName.invalid && userForm.submitted">
+            <div *ngIf="lastName.errors?.['required']">Last Name is required</div>
+            <div *ngIf="lastName.errors?.['maxlength']">The last name must not exceed 15 characters</div>
+            <div *ngIf="lastName.errors?.['minlength']">3 characters are required for the last name</div>
+        </div>
+        <fieldset class="form-group w-50 m-2 p-2">
+            <label for="password">password
+            </label>
+            <input class="form-control" [(ngModel)]="user.password" #password="ngModel"  name="notUsed" id="password"type="password"  required minlength="8" maxlength="15">
+        </fieldset>
+        <div class="alert alert-warning w-50 m-2 p-2" *ngIf="password.invalid && userForm.submitted">
+            <div *ngIf="password.errors?.['required']">Password is required</div>
+        </div>
+        <fieldset class="form-group w-50 m-2 p-2">
+            <label for="email">email
+            </label>
+            <input class="form-control" [(ngModel)]="user.email" #email="ngModel" name="notUsed" id="email"type="emails" required>
+        </fieldset>
+        <div class="alert alert-warning w-50 m-2 p-2" *ngIf="email.invalid && userForm.submitted">
+            <div *ngIf="email.errors?.['required']">Email is required</div>
+            <div *ngIf="!email.errors?.['email'] && !email.errors?.['required'] ">Email provided is not valid</div>
+        </div>
+        <div class="form-group w-50 m-2 p-2">
+            <button class="btn btn-secondary p-2 m-2" type="reset">Start Again</button>
+            <button class="btn btn-primary p-2 m-2" type="submit">Register</button>    
+        </div>
+    </form>
+</div>

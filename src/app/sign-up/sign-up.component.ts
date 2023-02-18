@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { User } from "../shared/models/user";
+import { User } from "./../shared/models/User";
 
 @Component({
   selector: 'app-sign-up',
@@ -8,10 +8,10 @@ import { User } from "../shared/models/user";
 })
 export class SignUpComponent {
 
-  user = new User('last name de toto', 'first name de toto', 0, '','','','');
+  user = new User();
 
-  onClick(){
-    alert('submit');
+  onSubmit(){
+    console.log(this.user);
   }
 
 }
