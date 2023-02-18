@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms'; // <--- JavaScript import from Angular
 import { RouterModule } from '@angular/router'; // <--- JavaScript import from Angular
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BlocksComponent } from './blocks/blocks.component';
@@ -11,6 +12,7 @@ import { AdminExoComponent } from './admin-exo/admin-exo.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { MenuComponent } from './menu/menu.component';
 import { ROUTES } from "./app.routes";
+import { MyFormComponent } from './my-form/my-form.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { ROUTES } from "./app.routes";
     UserProfileComponent,
     AdminExoComponent,
     SignUpComponent,
-    MenuComponent
+    MenuComponent,
+    MyFormComponent
   ],
   imports: [
     BrowserModule,

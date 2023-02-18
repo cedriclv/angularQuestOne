@@ -1,0 +1,85 @@
+<form #myForm="ngForm" (ngSubmit)="myForm.valid && onSubmit()" class="w-50 m-2">
+  <div class="alert alert-warning">
+    <p>Form submitted ? {{ myForm.submitted }}</p>
+    <p>Form valid ? {{ myForm.valid }}</p>
+    <p>Form invalid ? {{ myForm.invalid }}</p>
+  </div>
+  <fieldset class="m-2">
+    <label for="title-order" class="form-label">Titre</label>
+    <input
+      class="form-control"
+      id="title-order"
+      name="title-order"
+      type="text"
+      [(ngModel)]="model.title"
+      required
+      minlength="5"
+      #title="ngModel"
+    />
+  </fieldset>
+  <ul *ngIf="title.errors && myForm.submitted">
+    <li *ngIf="title.errors?.['required']" class="alert alert-warning">
+      You need to enter a value please
+    </li>
+    <li *ngIf="title.errors?.['minlength']" class="alert alert-warning">
+      At least 5 characters please
+    </li>
+  </ul>
+
+  <fieldset class="m-2">
+    <label for="quantity-order" class="form-label">Quantité</label>
+    <input
+      class="form-control"
+      id="quantity-order"
+      name="quantity-order"
+      type="text"
+      [(ngModel)]="model.quantity"
+      required
+      #quantity="ngModel"
+    />
+    <ul *ngIf="quantity.errors && myForm.submitted">
+      <li *ngIf="quantity.errors?.['required']" class="alert alert-warning">
+        You need to enter a value please
+      </li>
+    </ul>
+  </fieldset>
+
+  <fieldset class="m-2">
+    <label for="date-order" class="form-label">Date de commande</label>
+    <input
+      class="form-control"
+      id="date-order"
+      name="date-order"
+      type="date"
+      [(ngModel)]="model.date"
+      required
+      #date="ngModel"
+      />
+  </fieldset>
+  <ul *ngIf="date.errors && myForm.submitted">
+    <li *ngIf="date.errors?.['required']" class="alert alert-warning">
+      You need to enter a value please
+    </li>
+  </ul>
+
+  <fieldset class="m-2">
+    <label for="contact-order" class="form-label">Contact</label>
+    <input
+      class="form-control"
+      id="contact-order"
+      name="contact-order"
+      type="email"
+      [(ngModel)]="model.contact"
+      required
+      email
+      #contact="ngModel"
+    />
+  </fieldset>
+  <ul *ngIf="contact.errors && myForm.submitted">
+    <li *ngIf="contact.errors?.['required']" class="alert alert-warning">
+      You need to enter a date please
+    </li>
+  </ul>
+  <button type="reset" class="btn btn-success m-2">Restaurer</button>
+  <button type="submit" class="btn btn-primary m-2">Sauvegarder</button>
+</form>
